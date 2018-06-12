@@ -37,18 +37,20 @@ mvn dependency:copy-dependencies    用这个方法可以自动提取依赖包
 
 ```
 
-最终成功的方法 
+由于maven的版本的问题，上面的方法可能会不成功，这个是可以用下面的流程试试看
 
 ```
 mvn package  打开sdk包 ，然后拷贝到相关目录
 
-mvn dependency:copy-dependencies   copy 依赖包  
+mvn dependency:copy-dependencies   
+
+copy 依赖包到项目的classpath路径下面
 
 ```
-在 VM_OPTION	中设置下面的参数
 
 系统启动的时候通过 -Dorg.hyperledger.fabric.sdk.configuration=/project/javaworkspace/fabric-sdk-java-sample/src/org/hyperledger/fabric/sdk/configuration/config.properties  的方式来指定配置文件
 
 
+具体的内容可以参考本书第160，161页相关的内容。
 
 
